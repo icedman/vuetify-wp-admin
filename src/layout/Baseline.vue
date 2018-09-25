@@ -58,13 +58,23 @@ export default {
     searching: false
   }),
   components: {
-    'sidebar': Sidebar
+    sidebar: Sidebar
   },
   mounted () {
     this.menuItems = [
-      { title: 'Hello', action: () => { console.log(this.$router) } },
+      {
+        title: 'Hello',
+        action: () => {
+          console.log(this.$router)
+        }
+      },
       { title: 'World', action: () => {} },
-      { title: 'Login', action: () => { this.$router.push('/login') } }
+      {
+        title: 'Login',
+        action: () => {
+          this.$router.push('/login')
+        }
+      }
     ]
   }
 }

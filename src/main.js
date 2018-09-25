@@ -6,10 +6,13 @@ import router from './router'
 import store from './store'
 import Vuetify from 'vuetify'
 import { sync } from 'vuex-router-sync'
+import * as WPAPI from 'wpapi'
 
 import 'vuetify/dist/vuetify.min.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'font-awesome/css/font-awesome.css'
+
+import Config from './config'
 
 Vue.config.productionTip = false
 
@@ -22,6 +25,15 @@ Vue.use(Vuetify, {
   // iconfont: 'fa'
 })
 
+// -------------------
+//  wordpress
+// -------------------
+const wpapi = new WPAPI({ endpoint: Config.wordpress.api_entry })
+Vue.prototype.$wpapi = wpapi
+
+// -------------------
+//  router rules
+// -------------------
 sync(store, router, { moduleName: 'route' })
 router.beforeEach((to, from, next) => {
   // if ((!store.state.user.user || !store.state.user.user.name) &&
@@ -40,8 +52,7 @@ router.beforeEach((to, from, next) => {
 
   next()
 })
-router.afterEach((to, from) => {
-})
+router.afterEach((to, from) => {})
 
 /* eslint-disable no-new */
 new Vue({

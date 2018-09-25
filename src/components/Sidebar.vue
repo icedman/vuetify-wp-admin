@@ -67,17 +67,33 @@ export default {
   },
   mounted () {
     this.items = [
-      { icon: 'contacts', text: 'Login (Full Page)', action: () => { this.$router.push('/login') } },
-      { icon: 'history', text: 'Buefy Table (Header)', action: () => { this.$router.push('/page1') } },
-      { icon: 'content_copy', text: 'Duplicates', action: () => { this.$router.push('/') } },
+      {
+        icon: 'contacts',
+        text: 'Login (Full Page)',
+        action: () => {
+          this.$router.push('/login')
+        }
+      },
+      {
+        icon: 'history',
+        text: 'Buefy Table (Header)',
+        action: () => {
+          this.$router.push('/page1')
+        }
+      },
+      {
+        icon: 'content_copy',
+        text: 'Duplicates',
+        action: () => {
+          this.$router.push('/')
+        }
+      },
       {
         icon: 'keyboard_arrow_up',
         'icon-alt': 'keyboard_arrow_down',
         text: 'Labels',
         model: true,
-        children: [
-          { icon: 'add', text: 'Create label' }
-        ]
+        children: [{ icon: 'add', text: 'Create label' }]
       },
       {
         icon: 'keyboard_arrow_up',

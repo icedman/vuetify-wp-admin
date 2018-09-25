@@ -133,7 +133,7 @@ export default {
     source: ''
   }),
   components: {
-    'sidebar': Sidebar
+    sidebar: Sidebar
   }
 }
 </script>

@@ -15,8 +15,7 @@ import Header from '@/layout/Header'
 export default {
   name: 'App',
   data () {
-    return {
-    }
+    return {}
   },
   computed: {
     layout () {

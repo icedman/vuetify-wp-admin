@@ -1,0 +1,11 @@
+export default {
+    wordpress: {
+	    domain: 'http://localhost',
+	    api_entry: `http://${domain}/wp-json`,
+	    ajax_entry: `http://${domain}`,
+	    wc_consumer: {
+	        key: 'ck_fd2ca6b94cdf1e8f19835500192514b7e8d5fe94',
+	        secret: 'cs_a5d3a9aada939f8a6f3e145a172690011d6be37f'
+	    }
+    }
+}
