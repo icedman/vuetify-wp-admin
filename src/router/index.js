@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/pages/HelloWorld'
-// import BuefyTable from '@/pages/BuefyTable'
 import Login from '@/pages/Login'
+import Page from '@/pages/Page'
 
 Vue.use(Router)
 
@@ -22,6 +22,14 @@ export default new Router({
       component: HelloWorld,
       meta: {
         layout: 'Header'
+      }
+    },
+    {
+      path: '/page/:id',
+      name: 'Page',
+      component: Page,
+      meta: {
+        layout: 'Baseline'
       }
     },
     {

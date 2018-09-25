@@ -76,9 +76,16 @@ export default {
       },
       {
         icon: 'history',
-        text: 'Buefy Table (Header)',
+        text: 'Page1 (Header)',
         action: () => {
           this.$router.push('/page1')
+        }
+      },
+      {
+        icon: 'history',
+        text: 'WordPress Page',
+        action: () => {
+          this.$router.push('/page/3749')
         }
       },
       {

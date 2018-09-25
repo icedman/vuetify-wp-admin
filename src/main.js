@@ -14,7 +14,26 @@ import 'font-awesome/css/font-awesome.css'
 
 import Config from './config'
 
-Vue.config.productionTip = false
+import vc_row from './pages/visual_composer/vc_row'
+Vue.component('vc_row', vc_row)
+import vc_column from './pages/visual_composer/vc_column'
+Vue.component('vc_column', vc_column)
+
+// -------------------
+//  extra
+// -------------------
+String.prototype.hashCode = function() {
+    var hash = 0;
+    if (this.length == 0) {
+        return hash;
+    }
+    for (var i = 0; i < this.length; i++) {
+        var char = this.charCodeAt(i);
+        hash = ((hash<<5)-hash)+char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    return hash;
+}
 
 Vue.use(Vuetify, {
   // theme: {
@@ -28,6 +47,11 @@ Vue.use(Vuetify, {
 // -------------------
 //  wordpress
 // -------------------
+import _ from 'lodash'
+
+Vue.config.productionTip = false
+require('./lib/shortcode.js')
+
 const wpapi = new WPAPI({ endpoint: Config.wordpress.api_entry })
 Vue.prototype.$wpapi = wpapi
 
